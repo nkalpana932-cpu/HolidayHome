@@ -1,0 +1,67 @@
+﻿ @model HolidayHome.Models.RegisterModel
+@{
+    ViewData["Title"] = "Create User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create User</h1>
+
+<form asp-action="CreateUser" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" type="tel" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AddressLine1"></label>
+        <input asp-for="AddressLine1" class="form-control" />
+        <span asp-validation-for="AddressLine1" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AddressLine2"></label>
+        <input asp-for="AddressLine2" class="form-control" />
+        <span asp-validation-for="AddressLine2" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="State"></label>
+        <input asp-for="State" class="form-control" maxlength="2" style="text-transform:uppercase" />
+        <span asp-validation-for="State" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ZipCode"></label>
+        <input asp-for="ZipCode" class="form-control" />
+        <span asp-validation-for="ZipCode" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="UserList" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
